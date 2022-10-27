@@ -398,148 +398,154 @@ propiedad
 setter
 6. Obtiene el valor de la propiedad haciendo uso del getter
 
----------------------------------------//
+------------------------------------------------------------------------------------------
 
-class User {
-  String? _nombre;
-  int? _edad;
+    class User {
+     String? _nombre;
+     int? _edad;
 
-  void set nombre(String nombre) {
-    _nombre = nombre;
-  }
+     void set nombre(String nombre) {
+      _nombre = nombre;
+     }
 
-  String get nombre{
-   return _nombre!;
-  }
+     String get nombre{
+      return _nombre!;
+     }
 
-  void set edad(int edad) {
-    _edad = edad;
-  }
+     void set edad(int edad) {
+       _edad = edad;
+     }
 
-  int get edad{
-   return _edad!;
-  }
+      int get edad{
+       return _edad!;
+      }
 
-  void reporte() {
-    print("Nombre: $_nombre");
-    print("Edad: $_edad años");
-  }
-}
+     void reporte() {
+      print("Nombre: $_nombre");
+      print("Edad: $_edad años");
+      }
+    }
 
-void main(List<String> args) {
-  final usuario1 = User();
-  usuario1.nombre = "Alex";
-  usuario1.edad = 50;
-  print(usuario1.nombre);
-  print(usuario1.edad);
-  usuario1.reporte();
-}
+     void main(List<String> args) {
+      final usuario1 = User();
+      usuario1.nombre = "Alex";
+      usuario1.edad = 50;
+      print(usuario1.nombre);
+      print(usuario1.edad);
+     usuario1.reporte();
+    }
 
------------------Usando metodos arrow-----------------//
+-------------------------------------------------------------------------------------
 
-class User {
-  String? _nombre;
-  int? _edad;
+## Usando metodos arrow
 
-  void set nombre(String nombre) => _nombre = nombre;
-  void set edad(int edad) => _edad = edad;
+    class User {
+      String? _nombre;
+      int? _edad;
 
-  String get nombre => _nombre!;
-  int get edad => _edad!;
+      void set nombre(String nombre) => _nombre = nombre;
+      void set edad(int edad) => _edad = edad;
 
-  void reporte() {
-    print("Nombre: $_nombre");
-    print("Edad: $_edad años");
-  }
-}
+      String get nombre => _nombre!;
+      int get edad => _edad!;
 
-void main(List<String> args) {
-  final usuario1 = User();
-  usuario1.nombre = "Alex";
-  usuario1.edad = 50;
-  print(usuario1.nombre);
-  print(usuario1.edad);
-  usuario1.reporte();
-}
+      void reporte() {
+        print("Nombre: $_nombre");
+        print("Edad: $_edad años");
+      }
+    }
 
----------------------------------------//
+       void main(List<String> args) {
+        final usuario1 = User();
+        usuario1.nombre = "Alex";
+        usuario1.edad = 50;
+        print(usuario1.nombre);
+       print(usuario1.edad);
+       usuario1.reporte(); 
+    }    
 
-Constructores
+--------------------------------------------------------------------------------------------------
+
+## Constructores
+
 - Metodo de la clase que se encarga de inicializar los atributos
 - Es el primer metodo que se llama al crear la instancia
 - El metodo lleva el nombre de la clase
 
----------------------------------------//
+--------------------------------------------------------------------------------------------------
 
-class User {
-  User() {
-    //1
-    print("Constructor User");
-  }
-}
+    class User {
+      User() {
+       //1
+      print("Constructor User");
+     }
+    }
 
-void main(List<String> args) {
-  final usuario1 = User(); //2
-  print(usuario1);
-}
+     void main(List<String> args) {
+      final usuario1 = User(); //2
+      print(usuario1);
+    }
 
 1. Creacion del contructor User dentro de la clase User
 2. Creacion de la instancia usuario1 que invoca al constructor
 User al momento de su creacion
 
---------------Equivalencia a los setters y getters---------------//
+---------------------------------------------------------------------------------------------
+## Equivalencia a los setters y getters
 
-class User {
-  String? _nombre; //1
-  int? _edad;
+     class User {
+      String? _nombre; //1
+      int? _edad;
 
-  User(String nombre, int edad) {
-    //2
-    this._nombre = nombre;
-    this._edad = edad;
-  }
+     User(String nombre, int edad) {
+       //2
+      this._nombre = nombre;
+      this._edad = edad;
+     }
 
-  String? get nombre => _nombre; //3
-  int? get edad => _edad;
-}
+     String? get nombre => _nombre; //3
+     int? get edad => _edad;
+    }
 
-void main(List<String> args) {
-  final usuario1 = User("Alex", 50); //4
-  print(usuario1.nombre);
-  print(usuario1.edad);
-}
+    void main(List<String> args) {
+     final usuario1 = User("Alex", 50); //4
+     print(usuario1.nombre);
+     print(usuario1.edad);
+    }
 
 1. Cracion de las propiedades de la clase User
 2. Creacion del contructor User de la clase User
 3. Creacion de getters
 4. Creacion de la instancia usuario1
 
------------Version corta de constructores {short hand}------------//
+---------------------------------------------------------------------------------------------------
 
-class User {
-  String _nombre; //1
-  int _edad;
+## Version corta de constructores {short hand}
 
-  User(this._nombre, this._edad); //2
+     class User {
+       String _nombre; //1
+       int _edad;
 
-  String get nombre => _nombre; //3
-  int get edad => _edad;
-}
+       User(this._nombre, this._edad); //2
 
-void main(List<String> args) {
-  final usuario1 = User("Alex", 50); //4
-  print(usuario1.nombre);
-  print(usuario1.edad);
-}
+       String get nombre => _nombre; //3
+       int get edad => _edad;
+     }
+
+     void main(List<String> args) {
+       final usuario1 = User("Alex", 50); //4
+       print(usuario1.nombre);
+       print(usuario1.edad);
+     }
 
 1. Creacion de las propiedades
 2. Creacion del contructor
 3. Creacion de los getters
 4. Creacion de la instancia User con su contruccion
 
----------------------------------------// -----------------------------
+-------------------------------------------------------------------------------------------------------
 
-Constructores con propiedades nombradas
+## Constructores con propiedades nombradas
 
 class User {
   String? nombre; //1
