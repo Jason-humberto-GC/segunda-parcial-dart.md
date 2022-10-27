@@ -250,108 +250,105 @@ Se declara el valor deesde el inicio para que funcione bien  ("tiempo de compila
 
  vedo2
  ----------------------------------------------------------------------------------------
+ ##clases
  
- class User { //1
-  String? nombre; //2
-  int? edad; //3
-}
+    class User {                 //Creacion de la clase User, las claves van con mayuscula
+    String? nombre;              //Propiedad nombre de tipo String. Se declaran igual que una variable,
+                                  //se llaman propiedad al ir dentro de la clase
+    int? edad;                    //Propiedad de edad
+    }
 
-void main(List<String> args) {
-  User usuario1 = User(); //4
-  print(usuario1); //5
-  print(usuario1.nombre); //6
-  print(usuario1.edad); //7
-}
+    void main(List<String> args) {
+     User usuario1 = User();           //Creacion de instancia usuario1 de la clase User
+     print(usuario1);                 //Impresion de la instancia usuario1
+     print(usuario1.nombre);          //Impresion de la propoiedad nombre de la instanca usuario1
+     print(usuario1.edad);            //Impresion de la propiedad edad de la instancia usuario1
+    }
 
-1. Creacion de la clase User, las claves van con mayuscula
-2. Propiedad nombre de tipo String. Se declaran igual que una variable
-se llaman propiedad al ir dentro de la clase
-3. Propiedad de edad
-4. Creacion de instancia usuario1 de la clase User
-5. Impresion de la instancia usuario1
-6. Impresion de la propoiedad nombre de la instanca usuario1
-7. Impresion de la propiedad edad de la instancia usuario1
+------------------------------------------------------------------------------------------------
 
----------------------------------------//
+    class User {
+    String nombre = "Alex";
+    int edad = 50;
+    }
 
-class User {
-  String nombre = "Alex";
-  int edad = 50;
-}
+    void main(List<String> args) {
+      User usuario1 = User();
+      print(usuario1.nombre);
+      print(usuario1.edad);
+    }
 
-void main(List<String> args) {
-  User usuario1 = User();
-  print(usuario1.nombre);
-  print(usuario1.edad);
-}
+--------------------------------------------------------------------------------------------- 
 
----------------------------------------//
+    class User {
+    String nombre = "Alex";
+    int edad = 50;
+    }
 
-class User {
-  String nombre = "Alex";
-  int edad = 50;
-}
+    void main(List<String> args) {
+     User usuario1 = User();
+     User usuario2 = User();
 
-void main(List<String> args) {
-  User usuario1 = User();
-  User usuario2 = User();
+      print(usuario1.nombre);
+      print(usuario1.edad);
+      print(usuario2.nombre);
+      print(usuario1.edad);
+    }
 
-  print(usuario1.nombre);
-  print(usuario1.edad);
-  print(usuario2.nombre);
-  print(usuario1.edad);
-}
+-----------------------------------------------------------------------------------------------
 
----------------------------------------//
+    class User {
+    String? nombre;
+    int? edad;
+    }
 
-class User {
-  String? nombre;
-  int? edad;
-}
+    void main(List<String> args) {
+     User usuario1 = User();
+     var usuario2 = User();
 
-void main(List<String> args) {
-  User usuario1 = User();
-  var usuario2 = User();
+     usuario1.nombre = "Alex";
+     usuario1.edad = 50;
+     usuario2.nombre = "Jimena";
+     usuario2.edad = 11;
 
-  usuario1.nombre = "Alex";
-  usuario1.edad = 50;
-  usuario2.nombre = "Jimena";
-  usuario2.edad = 11;
+     print(usuario1.nombre);
+     print(usuario1.edad);
+     print(usuario2.nombre);
+     print(usuario2.edad);
+    }
 
-  print(usuario1.nombre);
-  print(usuario1.edad);
-  print(usuario2.nombre);
-  print(usuario2.edad);
-}
+----------------------------------------------------------------------------------------------
 
----------------------------------------//
+    class User {
+    String? nombre;
+    int? edad;
 
-class User {
-  String? nombre;
-  int? edad;
-
-  void reporte() {
-    //1
+    void reporte() {
+     //1
     print("Nombre: $nombre"); //2
     print("Edad: $edad años"); //3
-  }
-}
+     } 
+    }
 
-void main(List<String> args) {
-  User usuario1 = User();
-  usuario1.nombre = "Alex";
-  usuario1.edad = 50;
+    void main(List<String> args) {
+      User usuario1 = User();
+      usuario1.nombre = "Alex";
+      usuario1.edad = 50;
 
-  usuario1.reporte(); //4
-}
+     usuario1.reporte(); //4 
+    }
 
-1.Metodo reporte, es parecido a una duncion.
-Al estar dentro de la clase se convierte en metodo
-2.Imprime la propiedad nombre
-3.Imprime la propiedad edad
-4.Se invoca al metodo de la instancia usuario1
+notas: Al estar dentro de la clase se convierte en metodo
 
----------------------------------------//
+1-Metodo reporte, es parecido a una duncion.
+
+2-Imprime la propiedad nombre
+
+3-Imprime la propiedad edad
+
+4-Se invoca al metodo de la instancia usuario1
+
+-----------------------------------------------------------------------------------------------
 
 Encapsulamiento
 - Capacidad de ocultar los atributos de clase
@@ -364,32 +361,32 @@ los atributos de la clase
 Getter: Son metodos que retornan los valores de los
 atributos de la clase
 
----------------------------------------//
+------------------------------------------------------------------------------------------
 
-class User {
-  String? _nombre;
-  int? _edad;
+    class User {
+      String? _nombre;
+      int? _edad;
 
-  void set nombre(String nombre) { //1
-    _nombre = nombre; //2
-  }
+    void set nombre(String nombre) { //1
+       _nombre = nombre; //2
+      }
 
-  String get nombre{ //3
-   _nombre!; //4
-  }
+     String get nombre{ //3
+        _nombre!; //4
+      }
 
-  void reporte() {
-    print("Nombre: $_nombre");
-    print("Edad: $_edad años");
-  }
-}
+    void reporte() {
+      print("Nombre: $_nombre");
+      print("Edad: $_edad años");
+     }
+    }
 
-void main(List<String> args) {
-  final usuario1 = User();
-  usuario1.nombre = "Alex"; //5
-  print(usuario1.nombre); //6
-  usuario1.reporte();
-}
+    void main(List<String> args) {
+     final usuario1 = User();
+     usuario1.nombre = "Alex"; //5
+     print(usuario1.nombre); //6
+     usuario1.reporte();
+    }
 
 1. Metodo Setter
 2. Establece el argumento que recibe la propiedad propiedad
