@@ -547,28 +547,30 @@ User al momento de su creacion
 
 ## Constructores con propiedades nombradas
 
-class User {
-  String? nombre; //1
-  int? edad;
+    class User {
+      String? nombre; //1
+      int? edad;
 
-  User({this.nombre, this.edad}); //2
+      User({this.nombre, this.edad}); //2
 
-  String? get getNombre => nombre; //3
-  int? get getEdad => edad;
-}
+      String? get getNombre => nombre; //3
+      int? get getEdad => edad;
+    }
 
-void main(List<String> args) {
-  final usuario1 = User(nombre: "Alex", edad: 50); //4
-  print(usuario1.nombre);
-  print(usuario1.edad);
-}
+    void main(List<String> args) {
+      final usuario1 = User(nombre: "Alex", edad: 50); //4
+      print(usuario1.nombre);
+      print(usuario1.edad);
+    }
 
 1. Creacion de las propiedades
 2. Creacion del contructor
 3. Creacion de los getters
 4. Creacion de la instancia User con su contruccion
 
-----------Varios constructores para una clase------------//
+---------------------------------------------------------------------------------------
+
+## Varios constructores para una clase
 
 class User {
   String? nombre;
