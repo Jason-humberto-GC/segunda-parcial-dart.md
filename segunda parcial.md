@@ -66,6 +66,16 @@ Tipo Dynamic
       dynamic miDinamico1 = 3.1416;
       print(miDinamico1);
      }
+     
+ Tipo final 
+ se utliza para que eldato no se pueda cambiar ("tiempo de ejecucion".
+       
+      void main() { 
+      final double miPI = 3.1416;  
+      print(miPI);
+      }
+      
+      
  ------------------------------------------------------------------------------------------------------------------
  
  ## Verificar un tipo de dato 
@@ -90,11 +100,80 @@ Ejemplo:
       print(miNumero2 is num);                      //verdadero
 
       String miString = "hola";
-      print(miString is String);                    //verdadero
+      print(miString is String);                     //verdadero
+      
+      bool miBool = true;                           
+      print(!miBool);                                //false
+      
+      bool miBool = true;                           
+      print(miBool);                                 //verdadero
      }
      
 !! Nota: el dinamico ("dynamic") no se puede verificar que tipo de dato es porque  puede ser utlizado en varios
 tipos de datos.!!
 
- 
+!! Nota: el tipop bool es para representar valores booleanos: true y false. !!
 
+---------------------------------------------------------------------------------------------------------------------
+
+## Declaracion de contantes 
+Se declara el valor deesde el inicio para que funcione bien  ("tiempo de compilacion")
+
+    void main() {
+    const double miPI = 3.1416;   ///declarion de constante de manera explicita 
+    print(miPI);
+    }
+    
+ -------------------------------------------------------------------------------------------------------
+ 
+ ## RuntimeType
+ verifica el dato en timpo de ejecucioón y muestra el tipo de dato que esta utilizando al moento de ejecutar el programa 
+ 
+    void main() {
+    num miNumero;
+    miNumero = 3.1416;
+    print(miNumero
+      .runtimeType); //timpo de ejecucion  y muestra que tipo de dato es double
+
+    dynamic midinamico;
+    midinamico = 5;
+    print(midinamico
+      .runtimeType); //timpo de ejecucion  y muestra que tipo de dato es   int.
+
+    dynamic miDinamico;
+    miDinamico = "5";
+    print(miDinamico
+      .runtimeType); //timpo de ejecucion  y muestra que tipo de dato es  string.
+    }
+ 
+ ----------------------------------------------------------------------------------------------------------------
+ 
+ ## Declaracion con var  (inferencia de tipo)
+ verifacr tipo de variables: 
+ 
+    void main(List<String> args) {
+    var numero1 = 100;      //int
+    var numero2 = 9.81;      //double
+    var nombre = "jason";   //string
+    
+    print(numero1.runtimeType);
+    print(numero2.runtimeType);
+    print(nombre.runtimeType);
+    }
+ -------------------------------------------------------------------------------------------------------------------
+ 
+ ## casting o convercion de tipos 
+ 
+ 
+    void main(List<String> args) {
+     var numero1 = 100; //tipo int
+     var numero2 = 9.81; //tipo double
+     
+     var resultado;   //dinamic
+
+     resultado = numero1 + numero2;
+     print(resultado.runtimeType);  //double
+    }
+ -----------------------------------------------------------------------------------------------------------------
+ 
+ 
