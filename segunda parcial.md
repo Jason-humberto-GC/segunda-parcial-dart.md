@@ -402,7 +402,7 @@ ciclo con while
     
 ---------------------------------------------------------------------------------------------------------
 
- ##clases
+ ## clases
  
     class User {                 //Creacion de la clase User, las claves van con mayuscula
     String? nombre;              //Propiedad nombre de tipo String. Se declaran igual que una variable,
