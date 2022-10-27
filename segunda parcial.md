@@ -16,6 +16,15 @@
       print("hola mundo");
      } 
 --------------------------------------------------------
+## imprecion de varios renglones 
+
+
+    void main(List<String> args) {
+     print("en lugar de\n"
+       "la mancha de cuyo\n"
+       "mombre no quiero acordarme");
+    }
+-------------------------------------------------------------
 ## Declaracion de Variables 
 
  Maneja un tipado  explicito 
@@ -245,11 +254,154 @@ Se declara el valor deesde el inicio para que funcione bien  ("tiempo de compila
     return num * num;
     }
     
+---------------------------------------------------------------------
+
+## Listas 
+
+    void main(List<String> args) {
+     final calificaciones = []; // lista vacia
+     print(calificaciones);
+     calificaciones.add(2);
+    }
+    
+Agrgar un dato a la lista (.add)
+
+    void main(List<String> args) {
+    final calificaciones = [10,6,9, 8,10,8]; 
+    print(calificaciones);
+    calificaciones.add(2);   // agrgar un dato a la lista 
+    print(calificaciones);  
+    }
+ Nota: solo con "const" marca error el agragar un valor en la lista 
+ 
+ 
+ Imprimir de un dato por renglon de la lista 
+ 
+     void main(List<String> args) {
+      final calificaciones = [10, 6, 9, 8, 10, 8];   
+       print(calificaciones);
+      calificaciones.add(2);
+      for (var i = 0; i < calificaciones.length; i++) {
+             print(calificaciones[i]);
+          }
+     }
+     
+     
+ Genrar listas 
+   
+    void main(List<String> args) {
+      var numeros = List<int>.generate(10, (i) => i + 1);
+      print(numeros);
+      var sum = 0;
+      numeros.forEach((e) => sum += e);
+      print("sum1: $sum");
+      sum = 0;
+      numeros.forEach((e) {
+       sum += e;
+     });
+     print("sum2: $sum");
+     }
+     
+ --------------------------------------------------------------------------------------
+ 
+ ## condicionales 
+ 
+    void main(List<String> args) {
+     int n1 = 5, n2 = 5;
+     if (n1 > n2) {
+       print("$n1 > $n2");
+     } else if (n1 == n2) {
+        print("$n1=$n2");
+     } else {
+       print("$n1<$n2");
+      }
+    }
+    
+----------------------------------------------------------------
+
+## Operador tenario
+
+    void main(List<String> args) {
+      int n1 = 9, n2 = 4;
+      int mayor;
+      if (n1 > n2) {
+         mayor = n1;
+      } else {
+         mayor = n2;
+        }
+        print("el mayor es: $mayor");
+        
+        int menor;
+        n1 < n2 ? menor = n1 : menor = n2;
+        print("el menor es: $menor");
+        menor = n1 < n2 ? n1 : n2; //declarativo (funcional)
+      }
+      
+------------------------------------------------------------------------
+
+## Sentencia  switch case
+
+    void main(List<String> args) {
+     var dia;
+     dia = 1;
+
+     switch (dia) {
+      case 1:
+        print("el dia es ${getDay(dia)}");
+        break;
+       case "martes":
+        print("el dia de hoy es maetes ");
+        break;
+       default:
+         print("dia no conocido");
+       }
+    }
+
+    String getDay(int num) {
+      if (num == 1) {
+       return "lunes";
+     } else {
+       return "";
+      }
+    }
+
+------------------------------------------------------------------------
+
+## Ciclos
+
+     void main(List<String> args) {
+      for (var i = 1; i <= 5; i++) {
+        print("$i");
+     }
+
+      var numeros = ["1", "2", 3.1416, true, 5];      //forma 1
+      for (var e in numeros) {
+        print("$e");
+      }  
+    } 
+    
+    numeros.forEach((e) {                     //forma 2
+    print("$e");
+    });
+   
+ciclo con while
+
+    void main(List<String> args) {
+     var num = 1;
+     while (num <= 5) {
+       stdout.write("$num");
+       num++;
+     }
+       print("");         //ciclo con do while
+       num = 1;
+       do {
+          stdout.write("$num");
+          num++;
+       } while (num <= 5); 
+      }
+    
 ---------------------------------------------------------------------------------------------------------
 
-
- vedo2
- ----------------------------------------------------------------------------------------
  ##clases
  
     class User {                 //Creacion de la clase User, las claves van con mayuscula
